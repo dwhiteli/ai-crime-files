@@ -44,7 +44,19 @@
     <a href="#" id="footer-next" class="btn btn-primary">Next Case →</a>
   </div>
 
-  <!-- Sticky audio player -->
+  <!-- Sticky audio player — MP3 mode (shown when podcast file exists) -->
+  <div class="audio-player audio-player--podcast" id="audio-player-mp3" style="display:none">
+    <div class="player-podcast-badge">🎙 PODCAST</div>
+    <div class="player-info">
+      <div class="player-section" id="mp3-title">Loading…</div>
+      <div class="player-status">FULL EPISODE AUDIO</div>
+    </div>
+    <audio id="mp3-audio" controls>
+      Your browser does not support audio playback.
+    </audio>
+  </div>
+
+  <!-- Sticky audio player — TTS fallback (shown when no MP3 yet) -->
   <div class="audio-player" id="audio-player">
     <button class="player-play" id="player-btn" aria-label="Play narration">▶</button>
     <div class="player-info">

@@ -385,6 +385,26 @@ async function populateVoices() {
   select.addEventListener('change', () => narrator.setVoice(select.value));
 }
 
+// ── MP3 detection ────────────────────────────────────────────────────────────
+async function tryMP3Player(ep) {
+  const pad = String(ep.id).padStart(2, '0');
+  const path = `audio/ep-${pad}.mp3`;
+  try {
+    const r = await fetch(path, { method: 'HEAD' });
+    if (!r.ok) return false;
+    // MP3 exists — switch to podcast player
+    document.getElementById('audio-player').style.display = 'none';
+    const mp3Wrap = document.getElementById('audio-player-mp3');
+    mp3Wrap.style.display = 'flex';
+    document.getElementById('mp3-title').textContent = `Case #${ep.id}: ${ep.title}`;
+    const audio = document.getElementById('mp3-audio');
+    audio.src = path;
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 // ── Boot ────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
   const id = getEpisodeId();
@@ -403,13 +423,15 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!episode.stub && episode.content.length > 0) {
     initScrollAnimations();
 
-    narrator = new Narrator();
-    narrator.buildScript(episode);
-    initSectionHighlight();
-    await populateVoices();
-
-    document.getElementById('player-btn').addEventListener('click', () => narrator.toggle());
-    document.getElementById('player-speed').addEventListener('change', e => narrator.setRate(e.target.value));
+    const hasMP3 = await tryMP3Player(episode);
+    if (!hasMP3) {
+      narrator = new Narrator();
+      narrator.buildScript(episode);
+      initSectionHighlight();
+      await populateVoices();
+      document.getElementById('player-btn').addEventListener('click', () => narrator.toggle());
+      document.getElementById('player-speed').addEventListener('change', e => narrator.setRate(e.target.value));
+    }
   }
 });
 
