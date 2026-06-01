@@ -1,35 +1,86 @@
-# Deploy to Netlify (2 minutes)
+# AI Crime Files — Deploy & Workflow Notes
 
-## Option A: Drag & Drop (no account needed for a quick URL)
+## Live Site
+https://dwhiteli.github.io/ai-crime-files/
 
-1. Go to https://app.netlify.com/drop
-2. Drag the entire `ai-crime-files/` folder onto the page
-3. Netlify generates a URL instantly (e.g. `https://sparkly-penguin-abc123.netlify.app`)
-4. Share that URL with Veronica — she clicks it, done
+## Repo
+https://github.com/dwhiteli/ai-crime-files (PUBLIC)
+Branch: main / root path
 
-To rename the URL: create a free Netlify account, claim the site, rename under Site Settings.
+---
 
-## Option B: Netlify CLI (permanent + updatable)
+## Adding Podcast Audio (NotebookLM Workflow)
 
-```bash
-npm install -g netlify-cli
-cd /Users/dwhite/Desktop/Second-Brain/projects/ai-crime-files
-netlify deploy --dir . --prod
+1. Open `notebooklm/ep-XX.md` — copy full contents
+2. Go to notebooklm.google.com → New notebook → Add source → paste text
+3. Audio Overview → Generate (~5 min)
+4. Three-dot menu → Download
+5. Rename file: `ep-01.mp3`, `ep-02.mp3`, etc. (zero-padded)
+6. Drop in `audio/` folder
+7. `git add audio/ep-XX.mp3 && git commit -m "Add Episode XX audio" && git push`
+
+The reader page auto-detects the MP3 and switches from TTS to podcast player. No code changes needed.
+
+---
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `episodes.js` | All episode data — edit content here |
+| `reader.html` / `reader.js` | Episode reader page |
+| `index.html` / `app.js` | Episode browse/index page |
+| `style.css` | All visual styles |
+| `audio/` | MP3 podcast files (ep-01.mp3 … ep-30.mp3) |
+| `notebooklm/` | Clean text exports for NotebookLM audio generation |
+| `export-notebooklm.js` | Script to regenerate notebooklm/ from episodes.js |
+
+---
+
+## Regenerating NotebookLM Exports
+
+If you update episode content in `episodes.js`, re-run:
+
+```
+node export-notebooklm.js
 ```
 
-Follow the auth prompt. You'll get a permanent URL you can update any time.
+This overwrites all 30 files in `notebooklm/`.
 
-## Updating content later
+---
 
-When new episode content is ready (after Gemini/ChatGPT research):
-1. Update `episodes.js` — remove `stub: true` and add `content: [...]` for that episode
-2. Re-deploy (drag & drop again, or `netlify deploy --dir . --prod`)
-3. Same URL — Veronica's progress is saved in her browser, carries forward automatically
+## Curriculum Structure
 
-## Veronica's experience
+| Phase | Days | Theme |
+|-------|------|-------|
+| I: Orientation | 1–3 | What AI governance is and why it matters |
+| II: The Cases | 4–10 | Real harm cases |
+| III: The Law Wakes Up | 11–16 | Regulatory landscape |
+| IV: Inside the Machine | 17–23 | HR AI systems in depth |
+| V: The Investigation | 24–28 | Audit and governance practice |
+| VI: The Verdict | 29–30 | SummitPeak capstone |
 
-- She clicks the link — full app loads, no install, no login
-- She can listen (built-in narration) or read
-- Progress saves in her browser automatically
-- She can close and return — it picks up where she left off
-- Works on phone, tablet, or laptop
+---
+
+## Progress Tracking
+Stored in browser `localStorage` under key `aicf_progress`. Per-episode, keyed by episode ID.
+Counts toward the Day X / 30 progress bar in the header.
+
+---
+
+## ICM Definition (Authoritative)
+ICM = **Interpretable Context Methodology**
+- 60% code/deterministic logic
+- 30% explicit written rules
+- 10% AI judgment (maximum)
+- Observe before you build
+- Factory first (governance structure before the system runs)
+
+---
+
+## Legacy: Netlify Option (no longer primary — GitHub Pages is live)
+
+For a quick share URL without GitHub Pages:
+1. Go to https://app.netlify.com/drop
+2. Drag the entire `ai-crime-files/` folder onto the page
+3. Netlify generates a URL instantly
