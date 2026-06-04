@@ -54,11 +54,11 @@ This overwrites all 30 files in `notebooklm/`.
 | Phase | Days | Theme |
 |-------|------|-------|
 | I: Orientation | 1–3 | What AI governance is and why it matters |
-| II: The Cases | 4–10 | Real harm cases |
-| III: The Law Wakes Up | 11–16 | Regulatory landscape |
-| IV: Inside the Machine | 17–23 | HR AI systems in depth |
-| V: The Investigation | 24–28 | Audit and governance practice |
-| VI: The Verdict | 29–30 | SummitPeak capstone |
+| II: The Case Files | 4–10 | Real harm cases |
+| III: The Law Arrives | 11–16 | Regulatory landscape |
+| IV: HR's Crime Scene | 17–23 | HR AI systems in depth |
+| V: Building the Task Force | 24–28 | Audit and governance practice |
+| VI: The Capstone | 29–30 | SummitPeak capstone |
 
 ---
 

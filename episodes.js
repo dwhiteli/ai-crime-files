@@ -27,10 +27,10 @@ const EPISODES = [
     },
     {
       type: "case-intro",
-      caseNumber: "CASE #2021-07",
+      caseNumber: "CASE FILE — AMAZON TOT",
       heading: "The Warehouse Worker",
-      location: "Baltimore, Maryland",
-      text: "His name is Eric. He worked at an Amazon fulfillment center — one of the enormous warehouses that makes two-day shipping possible. Every day he clocked in, badge scanned, worked his shift.\n\nThe warehouse had a system. It tracked everything: how fast you moved, how many packages you processed, how many seconds passed between tasks.\n\nOn a Tuesday afternoon, the system decided Eric wasn't working fast enough.\n\nA termination notice printed out.\n\nNo manager reviewed it. No human saw it before it happened. The system had logged too many \"time off task\" violations — including 47 seconds Eric spent getting a drink of water.\n\nEric was fired by a machine."
+      location: "Composite, drawn from documented cases",
+      text: "Call him Eric. He's a composite — built from years of reporting on Amazon's \"time off task\" system, the most carefully documented case being The Verge's investigation into the algorithmic discipline pipeline at Amazon fulfillment centers.\n\nHere is the workflow that has actually happened to real workers. The warehouse runs on a system that tracks everything: how fast you move, how many packages you process, how many seconds pass between tasks.\n\nOne afternoon, the system decides Eric isn't working fast enough.\n\nA termination notice prints out.\n\nNo manager reviews it. No human sees it before it happens. The system has logged too many \"time off task\" violations — including the seconds he spent getting a drink of water.\n\nEric was fired by a machine. And so were hundreds of others, in fulfillment centers across the country, before the practice surfaced in court filings, journalism, and worker testimony."
     },
     {
       type: "quote",
@@ -167,8 +167,8 @@ const EPISODES = [
     },
     {
       type: "scene",
-      heading: "The Wernfeldt Model",
-      text: "A data governance consultant named John Wernfeldt has been making an important argument: governance isn't documentation. It isn't policy. It's clarity about who makes decisions.\n\nHe describes three layers every organization needs:\n\nLayer 1 — The Facts: Your data, your systems, the source of truth.\nLayer 2 — The Quality Controls: Making sure the facts are accurate and reliable.\nLayer 3 — Decision Authority: Who owns a metric? Who can change a definition? Who resolves conflicts?\n\nHis argument: if ownership is unclear at Layer 3, nothing above it scales. You can have the most sophisticated AI in the world. If nobody owns the algorithm's behavior — who trained it, who monitors it, who can shut it down — you don't have AI governance.\n\nYou have a building with no fire marshal."
+      heading: "The Three Layers of Governance",
+      text: "Strip away the consultant vocabulary and any data governance program lives in three layers:\n\nLayer 1 — The Facts: your data, your systems, the source of truth.\nLayer 2 — The Quality Controls: making sure the facts are accurate and reliable.\nLayer 3 — Decision Authority: who owns a metric, who can change a definition, who resolves conflicts.\n\nIf ownership is unclear at Layer 3, nothing above it scales. You can have the most sophisticated AI in the world. If nobody owns the algorithm's behavior — who trained it, who monitors it, who can shut it down — you don't have AI governance.\n\nYou have a building with no fire marshal."
     },
     {
       type: "scene",
@@ -383,7 +383,7 @@ const EPISODES = [
     {
       type: "assignment",
       heading: "The Platform Audit",
-      text: "Your organization uses job advertising platforms — LinkedIn, Indeed, Google, Facebook, or others.\n\nAsk:\n1. What targeting options does each platform offer for job ads?\n2. Do any of those options allow filtering by age, gender, or geography in ways that could produce disparate impact?\n3. Who in your organization reviews job ad targeting before campaigns go live?\n\nIf nobody reviews it — your organization may be running discriminatory ads right now without knowing it."
+      text: "Your organization uses job advertising platforms — professional networks, search engines, and social platforms among them.\n\nAsk:\n1. What targeting options does each platform offer for job ads?\n2. Do any of those options allow filtering by age, gender, or geography in ways that could produce disparate impact?\n3. Who in your organization reviews job ad targeting before campaigns go live?\n\nIf nobody reviews it — your organization may be running discriminatory ads right now without knowing it."
     }
   ]
 },
@@ -954,7 +954,7 @@ const EPISODES = [
     {
       type: "finding",
       label: "THE MAP: WHERE AI TOUCHES HR",
-      text: "ATTRACT: Job posting optimization (which roles to advertise, where, to whom). Programmatic job advertising (algorithmic targeting of candidates — Facebook housing ad risk applies here). Candidate sourcing (AI-generated prospect lists from LinkedIn and other platforms).\n\nHIRE: Resume screening and ranking. Chatbot pre-screening conversations. Video interview analysis (facial expression, voice tone, word choice). Assessment scoring. Background check flagging.\n\nONBOARD: Personalized onboarding content. Document processing. Benefits enrollment assistance.\n\nDEVELOP: Learning recommendation engines. Internal mobility and job matching. Mentorship pairing algorithms.\n\nMANAGE: Performance management AI (feedback drafting, rating calibration, productivity tracking). Schedule optimization. Workload distribution. Attendance and behavior monitoring.\n\nREWARD: Compensation banding recommendations. Merit increase suggestions. Equity refresh algorithms. Benefits utilization analysis.\n\nRETAIN: Flight risk scoring. Engagement sentiment analysis. Succession planning recommendations.\n\nSEPARATE: Voluntary separation targeting models. Severance eligibility screening. Exit interview analysis."
+      text: "ATTRACT: Job posting optimization (which roles to advertise, where, to whom). Programmatic job advertising (algorithmic targeting of candidates — Facebook housing ad risk applies here). Candidate sourcing (AI-generated prospect lists from professional networking platforms).\n\nHIRE: Resume screening and ranking. Chatbot pre-screening conversations. Video interview analysis (facial expression, voice tone, word choice). Assessment scoring. Background check flagging.\n\nONBOARD: Personalized onboarding content. Document processing. Benefits enrollment assistance.\n\nDEVELOP: Learning recommendation engines. Internal mobility and job matching. Mentorship pairing algorithms.\n\nMANAGE: Performance management AI (feedback drafting, rating calibration, productivity tracking). Schedule optimization. Workload distribution. Attendance and behavior monitoring.\n\nREWARD: Compensation banding recommendations. Merit increase suggestions. Equity refresh algorithms. Benefits utilization analysis.\n\nRETAIN: Flight risk scoring. Engagement sentiment analysis. Succession planning recommendations.\n\nSEPARATE: Voluntary separation targeting models. Severance eligibility screening. Exit interview analysis."
     },
     {
       type: "scene",
