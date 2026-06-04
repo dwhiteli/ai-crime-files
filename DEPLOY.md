@@ -70,9 +70,15 @@ Counts toward the Day X / 30 progress bar in the header.
 
 ## ICM Definition (Authoritative)
 ICM = **Interpretable Context Methodology**
+
+A human operator sits above the workflow. 60/30/10 names the split of what's below:
 - 60% code/deterministic logic
 - 30% explicit written rules
-- 10% AI judgment (maximum)
+- 10% AI judgment (ceiling) — the algorithm's bounded share of the decision weight
+
+The human is not inside any layer. The human is above the stack, applying the rules, weighing the bounded AI signal, and accountable for the decision.
+
+Plus two operating principles:
 - Observe before you build
 - Factory first (governance structure before the system runs)
 
